@@ -1,0 +1,16 @@
+{
+  "name": "stealthtext-api",
+  "version": "1.0.0",
+  "main": "Server.js",
+  "scripts": {
+    "start": "node Server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.6",
+    "dotenv": "^16.4.5"
+  }
+}
