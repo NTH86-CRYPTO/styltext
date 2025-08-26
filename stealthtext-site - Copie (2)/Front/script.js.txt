@@ -1,0 +1,12 @@
+function scrollToSection(id) {
+  document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// FAQ accordion
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('open');
+    });
+  });
+});

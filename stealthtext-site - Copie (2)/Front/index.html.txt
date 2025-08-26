@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="StealthText — Convertissez vos textes en caractères indétectables par l'IA. Freemium : 200 caractères / essai, 5 essais / jour. Premium illimité." />
+  <title>StealthText – Convertisseur indétectable IA</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="images/logo.png" alt="Logo StealthText">
+      <span>StealthText</span>
+    </div>
+    <nav>
+      <a href="#hero">Accueil</a>
+      <a href="#fonctionnement">Fonctionnement</a>
+      <a href="#convertisseur">Convertisseur</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#faq">FAQ</a>
+      <a href="#blog">Blog</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1 class="text-gradient">Transformez vos textes en caractères indétectables par l'IA</h1>
+        <p>Freemium : 200 caractères par essai, 5 essais par jour. Passez en Premium pour un accès illimité.</p>
+        <div class="cta-buttons">
+          <button class="btn-primary" onclick="scrollToSection('#convertisseur')">Essayer maintenant</button>
+          <button class="btn-secondary" onclick="scrollToSection('#tarifs')">Voir les offres</button>
+        </div>
+      </div>
+      <picture class="hero-image" aria-hidden="true">
+        <source srcset="images/hero_new.webp" type="image/webp">
+        <img src="images/hero_new.png" alt="" loading="lazy">
+      </picture>
+    </section>
+
+    <!-- Fonctionnement -->
+    <section id="fonctionnement">
+      <h2 class="text-gradient">Comment ça marche ?</h2>
+      <p class="section-subtitle">Nous remplaçons les lettres latines par des homoglyphes Unicode (cyrillique/grec). Tout se fait en local, rien n’est envoyé.</p>
+      <div class="features">
+        <div class="feature"><div class="feature-icon">⚡</div><h3>Instantané</h3><p>Collez, convertissez, copiez.</p></div>
+        <div class="feature"><div class="feature-icon">🔒</div><h3>Privé</h3><p>Conversion dans votre navigateur.</p></div>
+        <div class="feature"><div class="feature-icon">🚀</div><h3>Compatible</h3><p>Fonctionne sur la plupart des plateformes.</p></div>
+      </div>
+    </section>
+
+    <!-- Convertisseur -->
+    <section id="convertisseur">
+      <h2 class="text-gradient">Convertisseur</h2>
+
+      <div class="converter">
+        <div class="limits-bar">
+          <span id="charCount">0 / 200 caractères</span>
+          <span class="sep">•</span>
+          <span id="dailyCount">Essais restants aujourd’hui : 5</span>
+          <span class="sep">•</span>
+          <span id="planBadge" class="badge">Plan : Gratuit</span>
+        </div>
+
+        <div class="converter-row">
+          <label for="inputText">Texte original</label>
+          <textarea id="inputText" rows="6" placeholder="Collez votre texte ici…"></textarea>
+          <div class="hint">Limite gratuite : 200 caractères par essai.</div>
+        </div>
+
+        <div class="converter-actions">
+          <button id="btnConvert" class="btn-primary">Convertir</button>
+          <button id="btnCopy" class="btn-secondary" disabled>Copier le résultat</button>
+          <button id="btnClear" class="btn-secondary">Effacer</button>
+
+          <label class="switch">
+            <input id="useGreekForOX" type="checkbox">
+            <span class="slider"></span>
+          </label>
+          <span class="switch-label">Favoriser Ο/Χ grecs</span>
+        </div>
+
+        <div class="converter-row">
+          <label for="outputText">Texte converti</label>
+          <textarea id="outputText" rows="6" readonly placeholder="Le texte converti apparaîtra ici…"></textarea>
+          <div id="msg" class="message" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarifs -->
+    <section id="tarifs">
+      <h2 class="text-gradient">Nos offres</h2>
+      <div class="pricing">
+        <div class="plan">
+          <h3>Gratuit</h3>
+          <ul>
+            <li>200 caractères par essai</li>
+            <li>5 essais gratuits / jour</li>
+            <li>Conversion locale</li>
+          </ul>
+          <button class="btn-secondary" onclick="scrollToSection('#convertisseur')">Essayer</button>
+        </div>
+        <div class="plan" style="border:2px solid #4cc9f0">
+          <h3>Premium</h3>
+          <ul>
+            <li>Essais illimités</li>
+            <li>Aucune limite de caractères</li>
+            <li>Support prioritaire</li>
+          </ul>
+          <!-- Remplace activatePremium() par Stripe/PayPal plus tard -->
+          <button class="btn-primary" onclick="activatePremium()">Passer Premium</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 class="text-gradient">Questions fréquentes</h2>
+      <div class="faq-item"><div class="faq-question">Les limites s’appliquent comment ?</div><div class="faq-answer"><p>Le plan gratuit est limité à 200 caractères par essai et 5 essais par jour (compteur local au navigateur). Le plan Premium est illimité.</p></div></div>
+      <div class="faq-item"><div class="faq-question">Que fait le bouton “Passer Premium” ?</div><div class="faq-answer"><p>Actuellement, il active un mode Premium de démonstration (localStorage). Remplace-le par ton paiement Stripe/PayPal.</p></div></div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog">
+      <h2 class="text-gradient">Derniers articles</h2>
+      <div class="blog-grid">
+        <article class="blog-card"><h3>Homoglyphes : guide rapide</h3><p>Table des remplacements et bonnes pratiques.</p></article>
+        <article class="blog-card"><h3>Unicode & détection</h3><p>Pourquoi certains détecteurs se trompent.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>&copy; 2025 StealthText — Tous droits réservés</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>

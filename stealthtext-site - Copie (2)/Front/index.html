@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StealthText — Transformez votre texte en contenu indétectable par l'IA grâce à la conversion Unicode. Outil anti-détection IA, rapide et efficace.">
+  <title>StealthText - Texte Indétectable IA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="brand">
+    <img src="images/logo.png" alt="Logo StealthText">
+    <span>StealthText</span>
+  </div>
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#fonctionnement">Fonctionnement</a>
+    <a href="#convertisseur">Convertisseur</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="accueil">
+  <div class="hero-content">
+    <h1 class="text-gradient">Rendez Votre Texte 100% Indétectable par l’IA</h1>
+    <p>StealthText est l’outil en ligne n°1 pour transformer vos écrits en contenu indétectable par les algorithmes de détection d’intelligence artificielle. Grâce à notre technologie Unicode, chaque lettre garde son apparence tout en échappant aux systèmes d’analyse automatiques.</p>
+    <div class="cta-buttons">
+      <button class="btn-primary" onclick="scrollToSection('#convertisseur')">Essayer Gratuitement</button>
+      <button class="btn-secondary" onclick="scrollToSection('#tarifs')">Voir les Offres Premium</button>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="images/hero_new.png" alt="Illustration StealthText">
+  </div>
+</section>
+
+<!-- ===== COMMENT ÇA MARCHE ===== -->
+<section id="fonctionnement">
+  <h2>Comment Fonctionne StealthText ?</h2>
+  <p class="section-subtitle">Une innovation technologique pour protéger vos écrits et votre liberté d’expression</p>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">🛡️</div>
+      <h3>Protection Anti-IA</h3>
+      <p>Nous remplaçons certaines lettres par des caractères spéciaux Unicode identiques visuellement mais différents techniquement, rendant la détection automatique pratiquement impossible.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <h3>Conversion Ultra-Rapide</h3>
+      <p>Copiez, collez, convertissez : votre texte est prêt en moins d’une seconde, prêt à être publié partout sans être repéré par les détecteurs IA.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🌍</div>
+      <h3>Compatibilité Totale</h3>
+      <p>Fonctionne sur toutes les plateformes : réseaux sociaux, blogs, documents professionnels, e-mails, et plus encore.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONVERTISSEUR ===== -->
+<section id="convertisseur">
+  <h2>Essayez Notre Convertisseur Gratuit</h2>
+  <p class="section-subtitle">Jusqu’à 200 caractères par essai et 5 conversions gratuites par jour</p>
+
+  <div class="converter">
+    <div class="limits-bar">
+      <span id="charCount">0 / 200 caractères</span>
+      <div class="char-progress"><div id="charBar"></div></div>
+      <span id="attemptCount">0 / 5 essais gratuits aujourd’hui</span>
+    </div>
+
+    <div class="converter-row">
+      <label for="inputText">Votre texte :</label>
+      <textarea id="inputText" placeholder="Collez votre texte ici..."></textarea>
+    </div>
+
+    <div class="converter-actions">
+      <button class="btn-primary" id="convertBtn">Convertir</button>
+      <button class="btn-secondary" id="copyBtn" disabled>Copier le Résultat</button>
+    </div>
+
+    <div class="converter-row">
+      <label for="outputText">Résultat :</label>
+      <textarea id="outputText" readonly></textarea>
+    </div>
+
+    <div class="message" id="message"></div>
+  </div>
+</section>
+
+<!-- ===== COMPTE ===== -->
+<section id="compte" class="converter" style="margin-top:1rem">
+  <h3>Mon compte</h3>
+  <div class="converter-row">
+    <label for="email">E-mail</label>
+    <input id="email" type="email" placeholder="vous@exemple.com">
+  </div>
+  <div class="converter-row">
+    <label for="password">Mot de passe</label>
+    <input id="password" type="password" placeholder="••••••••">
+  </div>
+  <div class="converter-actions">
+    <button id="btnSignup" class="btn-secondary">Créer un compte</button>
+    <button id="btnLogin" class="btn-primary">Se connecter</button>
+    <button id="btnLogout" class="btn-secondary">Se déconnecter</button>
+  </div>
+  <div id="authStatus" class="message">Déconnecté</div>
+</section>
+
+<!-- ===== TARIFS ===== -->
+<section id="tarifs">
+  <h2>Choisissez Votre Plan</h2>
+  <p class="section-subtitle">Passez au niveau supérieur avec le plan Premium et profitez d’un accès illimité</p>
+
+  <div class="pricing">
+    <div class="plan">
+      <h3>Gratuit</h3>
+      <ul>
+        <li>✅ 200 caractères maximum par conversion</li>
+        <li>✅ 5 conversions gratuites par jour</li>
+        <li>✅ Technologie Unicode anti-détection IA</li>
+      </ul>
+      <button class="btn-secondary" onclick="scrollToSection('#convertisseur')">Commencer Gratuitement</button>
+    </div>
+
+    <div class="plan">
+      <h3>Premium</h3>
+      <ul>
+        <li>🚀 Conversions illimitées</li>
+        <li>🚀 Aucun compteur de caractères</li>
+        <li>🚀 Accès aux futures mises à jour</li>
+        <li>🚀 Support client prioritaire</li>
+      </ul>
+      <!-- on ajoute id + onclick -->
+      <button class="btn-primary" id="btnPremium" onclick="handlePremium()">Passer en Premium</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <h2>Questions Fréquentes</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">Est-ce vraiment indétectable par l’IA ?</button>
+    <div class="faq-answer">
+      Oui. Nos conversions utilisent des caractères Unicode visuellement identiques aux lettres latines mais différents techniquement, ce qui trompe la plupart des détecteurs automatiques tout en restant lisible pour l’humain.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">L’outil est-il légal ?</button>
+    <div class="faq-answer">
+      Oui, l’outil est légal. Vous restez responsable de l’usage du contenu et du respect des lois et des CGU des plateformes où vous publiez.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Sur quelles plateformes puis-je l’utiliser ?</button>
+    <div class="faq-answer">
+      Partout où l’Unicode est accepté : réseaux sociaux, blogs, CMS, docs, e-mails… Quelques systèmes peuvent normaliser le texte et réduire l’effet.
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2025 StealthText — Technologie de conversion Unicode pour rendre vos textes indétectables par l’intelligence artificielle. Préservez vos idées, votre style et votre liberté d’expression.</p>
+</footer>
+
+<!-- scripts -->
+<script src="script.js"></script>
+<script>
+  // Accordéon FAQ
+  document.querySelectorAll('.faq-question').forEach(btn=>{
+    btn.addEventListener('click', ()=> btn.parentElement.classList.toggle('active'));
+  });
+</script>
+</body>
+</html>
